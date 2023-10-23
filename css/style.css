@@ -1,0 +1,1531 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/***************************************************
+	RESET!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***************************************************
+	HTML ELEMENTS
+***************************************************/
+/* Font for all the page */
+body {
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+body.about-page {
+	min-height: 270vh;
+}
+
+
+/* Background image for all the webpage */
+body::before {
+	content: ""; /* inserting an empty content, which is useful when we want the pseudo-element to exist but don't want it to have any visible or textual content. */
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url('../images/page-bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+	z-index: -1; /* Ensures the background sits behind other content */
+}
+
+h1 {
+	margin-bottom: 15px;
+}
+
+h2 {
+	margin-bottom: 35px;
+}
+
+button {
+	margin-top: 30px;
+	color: white;
+	background: #333333;
+	border: solid 1px #333333;
+	height: 40px;
+	width: 150px;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
+
+/* Adding space between lines */
+p, h1, h2, h3, ul {
+	line-height: 1.5;
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	flex-direction: column;
+}
+
+footer {
+	margin-top: auto;
+}
+
+.gallery-footer {
+	margin-left: 50px;
+}
+
+/* Hyperlinks */
+a {
+	color: #0086b3; /* Sets the color of the hyperlink text to blue */
+	text-decoration: none; /* Removes the underline decoration */
+	font-weight: bold; /* Makes the hyperlink text bold */
+	display: inline-block;
+}
+
+a:hover {
+	color: black; /* Changes the color when hovering over the hyperlink */
+	text-decoration: underline; /* Adds underline when hovering */
+}
+
+a:visited {
+	color:#0086b3; /* Sets the color of visited hyperlinks */
+}
+
+a:active {
+	color: green; /* Sets the color of active hyperlinks (when clicked) */
+}
+
+ul {
+
+}
+
+ul li::before {
+	content: " ";
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	background-color: #000; /* Change color to your preference */
+	border-radius: 50%; /* To make it round */
+	margin-right: 10px; /* To add some space between the bullet and the text */
+}
+
+/*************************************************************************************************
+																	GENERAL
+*************************************************************************************************/
+.bold {
+	font-weight: bold;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	height: 190vh; /* To put the footer down */
+	margin : 50px 100px 70px 100px;
+}
+
+/*************************************************************************************************
+														*********************
+																	INDEX
+														*********************
+*************************************************************************************************/
+
+/*************************************************************************************************
+																	MENU
+*************************************************************************************************/
+/* General settings */
+
+.menu {
+	display: grid;
+	/* 
+	grid-template-rows: repeat(6, 1fr); /* repeat 1 fraction unit height 6 times". So, it is equivalent to writing 1fr 1fr 1fr 1fr 1fr 1fr. This creates 4 rows in the grid, each with the same height. */
+	margin: 10px;
+	color: white;
+	font-size: 13px;
+	grid-gap: 10px;
+	height: 1000px;
+}
+
+.menu .item:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-bottom: -80px;
+}
+
+/* Put the text at the bottom of the case */
+.item {
+	position: relative;
+	/*	border: 1px solid black;*/
+	padding: 25px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-end; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+}
+
+
+/***************************************************
+	HOME
+***************************************************/
+.home-item {
+	background-image: url('../images/menu-bg-home.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.home-item:hover {
+	transform: scale(1.05); /* Increase the size by 5% */
+}
+
+a.home-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.home-link {
+	display: block;
+}
+
+.home-item, .contact-item {
+	height: 90px;
+	margin-bottom: -80px;
+}
+
+
+
+/***************************************************
+	ABOUT 
+***************************************************/
+/* ABOUT */
+.about-item {
+	background-color: #e65c00; /* orange */
+	position: relative;
+	padding: 0px 12px 0px 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Added to center the text horizontally */
+	margin-right: 5px;
+}
+
+
+.about-item:hover {
+	transform: scale(1.05); /* Increase the size by 5% */
+}
+
+a.about-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.about-link {
+	display: block;
+}
+
+.about-item, .contact-item {
+	height: 150px; /* adjust this to your need */
+}
+
+/* User icon */
+.fa-user {
+	font-size: 4em; /* Adjust this value to your desired size */
+	margin-bottom: 10px; /* Added margin to create space between the icon and text */
+}
+
+
+/***************************************************
+	CONTACT
+***************************************************/
+.contact-item {
+	background-color: #669900; /* green */
+	position: relative;
+	padding: 0px 12px 0px 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Added to center the text horizontally */
+	margin-left: 5px;
+}
+
+.contact-item:hover {
+	transform: scale(1.05);
+}
+
+.email-link {
+	color: inherit; /* this will make the link color the same as its parent element */
+	text-decoration: none; /* this will remove the underline */
+}
+
+.email-link:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Enveloppe icon */
+.fa-envelope {
+	font-size: 4em;
+	margin-bottom: 10px;
+}
+
+/***************************************************
+	ABOUT AND CONTACT
+***************************************************/
+/* No padding for ABOUT and CONTACT */
+.item.no-padding-grid-gap {
+	padding: 0;
+	grid-gap: 10px;
+/*	height: 120px;*/
+}
+/***************************************************
+	GALLERY
+***************************************************/
+.gallery-item {
+	background-image: url('../images/menu-bg-gallery.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	grid-row: span 4; /* This will make the gallery item span 2 rows */
+/*	margin-top: -80px;*/
+}
+
+.gallery-item:hover {
+	transform: scale(1.03);
+}
+
+.item.gallery-item a {
+	color: inherit;    /* takes the color of the parent element */
+	text-decoration: none;    /* removes the underline */
+}
+
+
+/***************************************************
+	LOREM IPSUM
+***************************************************/
+.item-lorem-ipsum {
+	position: relative;
+	padding: 12px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-end; /*  aligns the text to the bottom of the container. */	
+	align-items: center; /* aligns items horizontally to the center */
+	margin-top: 10px;
+	height: 110px ;
+}
+
+.item-lorem-ipsum:hover {
+	transform: scale(1.05);
+}
+
+/* Create the rectangle behing the "Lorem Ipsum" text */
+.text-background {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+}
+
+.text-background::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 30%; 
+	background-color: #cccc00; /* dark greenish */
+	z-index: -1;
+}
+
+
+
+/*************************************************************************************************
+																	INDEX 
+*************************************************************************************************/
+/***************************************************
+	MAIN
+***************************************************/
+.main {
+	display: grid;
+	grid-template-rows: 0fr 1fr 1fr;
+	margin: 10px 20px 20px 20px;
+}
+
+.main.about-main {
+	display: grid;
+	grid-template-rows: 0fr 1fr;
+	margin: 10px 20px 20px 20px;
+}
+
+
+.main .row:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+/***************************************************
+	ACCORD
+***************************************************/
+.accord-item {
+	background-image: url('../images/banner-bg-home.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 50px ;
+}
+
+/* Title */
+.accord-bold-large {
+	font-size: 3.5em; /* Adjust this value to get the size you want */
+	font-weight: bold;
+}
+
+.accord-bold-color {
+	font-weight: bold;
+	color: #0086b3;
+}
+
+/* CSS for two columns */
+.accord-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.accord-text {
+	padding-right: 50px;
+	padding-top: 15px;
+	padding-left: 35px;
+}
+
+.accord-image {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.accord-image img {
+	max-width: 90%;
+	padding-top: 55px;
+	padding-right: 150px;
+}
+
+/* Creating the left line */
+.accord-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.accord-left-line::before {
+	content: '';
+	position: absolute;
+	top: 15px;
+	left: -10px;
+	background: #0086b3;
+	width: 2px;
+	height: 90%;
+}
+
+/* Creating the top line */
+.accord-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 370px;
+}
+
+.accord-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #0086b3; 
+	z-index: -1;
+}
+/***************************************************
+	LONDON
+***************************************************/
+.item-london {
+	background-image: url('../images/home-img-2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-right: 10px;
+	height: 150px;
+}
+
+.london-bold-large-color {
+	color: #00cccc;
+	font-weight: bold;
+}
+
+.text-paragraph-london {
+	background: white;
+	margin-right: 10px;
+	padding: 25px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.text-paragraph-bottom-london {
+	position: relative;
+	background: white;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.text-paragraph-bottom-london::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 88%; /* adjust this to set your desired border width */
+	background: #bfbfbf;
+}
+
+
+/* Icons */
+.fa-location-dot {
+	padding-right: 15px;
+	color: #00cccc;
+	font-size: 25px;
+}
+
+.fa-location-dot:hover {
+	transform: scale(1.3);
+}
+
+.fa-star {
+	padding-left: 190px;
+	padding-right: 10px;
+	color: #bfbfbf;
+	font-size: 20px;
+}
+
+.fa-sm {
+	color: #bfbfbf;
+}
+
+.fa-twitter {
+	padding-left: 10px;
+	color: #bfbfbf;
+	font-size: 20px;
+}
+
+/* Creating the top line */
+.london-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 250px;
+}
+
+.london-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #00cccc; 
+	z-index: -1;
+}
+
+/* Creating the left line */
+.london-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.london-left-line::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -10px;
+	background: #00cccc;
+	width: 3px;
+	height: 120%;
+}
+/***************************************************
+	PARIS
+***************************************************/
+.item-paris {
+	background-image: url('../images/home-img-3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-left: 10px;
+	height: 150px;
+}
+
+.paris-bold-large-color {
+	color: rgb(255, 204, 0);
+	font-weight: bold;
+}
+
+.text-paragraph-paris {
+	background: white;
+	margin-left: 10px;
+	padding: 25px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.text-paragraph-bottom-paris {
+	position: relative;
+	background: white;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.text-paragraph-bottom-paris::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 88%; /* adjust this to set your desired border width */
+	background: #bfbfbf;
+}
+
+.fa-location-dot-paris  {
+	color: rgb(255, 204, 0);
+}
+
+/* London */
+.fa-star {
+	padding-left: 320px;
+	padding-right: 20px;
+	color: #bfbfbf;
+	font-size: 20px;
+}
+
+.paris-fa-star {
+	padding-left: 340px;
+}
+
+.fa-sm {
+	color: #bfbfbf;
+}
+
+.fa-twitter {
+	padding-left: 20px;
+	color: #bfbfbf;
+	font-size: 20px;
+}
+
+/* Creating the top line */
+.paris-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 250px;
+}
+
+.paris-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: rgb(255, 204, 0);
+	z-index: -1;
+}
+
+/* Creating the left line */
+.paris-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.paris-left-line::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -10px;
+	background: rgb(255, 204, 0);
+	width: 3px;
+	height: 120%;
+}
+
+/***************************************************
+	LONDON AND PARIS
+***************************************************/
+.item.grid-gap {
+
+}
+/***************************************************
+	READ MORE
+***************************************************/
+.item-read-more {
+	padding: 20px;
+	grid-gap: 10px;
+	height: 400px;
+	background-color: white;
+}
+
+.read-more-bold-large-color {
+	color: #669900;
+	font-weight: bold;
+}
+
+/* I want the <b> to have a white background */
+.item-read-more p {
+	background-color: white;
+	padding-top: 40px;
+}
+
+.read-more-division {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Added to center the text horizontally */
+	background: white;
+}
+
+
+/* COLUMN 1 */
+.item-read-more-column1 {
+	background-image: url('../images/home-img-4.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-left: 0px;
+}
+
+.item-read-more-column1:hover {
+	transform: scale(1.05);
+}
+
+/* Creating the bottom line */
+.text-background-read-more-column1 {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	height: 175px;
+	color: white;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-end; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+}
+
+.text-background-read-more-column1::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 25%; 
+	background-color: rgba(0, 204, 255, 0.5); /* semi-transparent dark greenish */
+	z-index: -1;
+}
+
+
+/* COLUMN 2 */
+.item-read-more-column2 {
+	background-image: url('../images/home-img-5.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-left: 10px;
+}
+
+.item-read-more-column2:hover {
+	transform: scale(1.05);
+}
+
+/* Creating the bottom line */
+.text-background-read-more-column2 {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	height: 175px;
+	color: white;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-end; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.text-background-read-more-column2::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 25%; 
+	background-color: rgb(0, 204, 153, 0.5); /* semi-transparent dark greenish */
+	z-index: -1;
+}
+
+
+
+/* COLUMN 3 */
+.item-read-more-column3 {
+	background-image: url('../images/home-img-6.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-left: 10px;
+}
+
+.item-read-more-column3:hover {
+	transform: scale(1.05);
+}
+
+/* Creating the bottom line */
+.text-background-read-more-column3 {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	height: 175px;
+	color: white;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-end; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+}
+
+.text-background-read-more-column3::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 25%; 
+	background-color: rgb(255, 204, 0, 0.5); /* semi-transparent dark greenish */
+	z-index: -1;
+}
+
+/* Creating the top line */
+.read-more-top-line {
+	position: relative;
+	z-index: 2;
+	padding-top: 35px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 500px;	
+}
+
+.read-more-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #669900;
+	z-index: -1;
+}
+
+/* Creating the left line */
+.read-more-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.read-more-left-line::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -10px;
+	background: #669900;
+	width: 3px;
+	height: 120%;
+}
+
+/*************************************************************************************************
+																	FOOTER
+*************************************************************************************************/
+#footer {
+	color: white;
+	padding: 10px;
+	text-align: right;
+	padding: 30px;
+	padding-right: 125px;
+}
+
+#gallery-footer {
+	color: white;
+	padding: 10px;
+	text-align: right;
+	padding: 30px;
+	padding-right: 0px;
+}
+
+/*************************************************************************************************
+														*********************
+																	ACCORD
+														*********************
+*************************************************************************************************/
+
+/*************************************************************************************************
+																	ACCORD2
+*************************************************************************************************/
+.accord2-item {
+	background-image: url('../images/banner-bg-about.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 20px ;
+}
+
+/* Title */
+.accord-bold-large {
+	font-size: 3.5em; /* Adjust this value to get the size you want */
+	font-weight: bold;
+}
+
+.accord2-bold-color {
+	font-weight: bold;
+	color: #990000;
+}
+
+
+
+/* Creating the left line */
+.accord2-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+	padding-top: 10px;
+}
+
+/* This is the vertical line */	
+.accord2-left-line::before {
+	content: '';
+	position: absolute;
+	top: 15px;
+	left: -10px;
+	background: #990000;
+	width: 2px;
+	height: 90%;
+}
+
+/* Creating the top line */
+.accord2-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 370px;
+}
+
+.accord2-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #990000;
+	z-index: -1;
+}
+
+.accord2-button {
+	margin-top: 30px;
+	color: white;
+	background: #990000;
+	border: solid 1px #990000;
+	height: 40px;
+	width: 150px;
+}
+
+
+.main .row-accord2:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/***************************************************
+	WHO WE ARE
+***************************************************/
+.item-who-we-are {
+	background-image: url('../images/about-img-2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-right: 10px;
+	height: 460px;
+}
+
+.text-paragraph-who-we-are {
+	background: white;
+	margin-right: 10px;
+	padding: 25px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.text-paragraph-bottom-who-we-are {
+	position: relative;
+	background: white;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.text-paragraph-bottom-who-we-are::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 38%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 75%; /* adjust this to set your desired border width */
+	background: #bfbfbf;
+}
+
+/* Creating the top line */
+.who-we-are-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 450px;
+}
+
+.who-we-are-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #00cccc; 
+	z-index: -1;
+}
+
+/***************************************************
+	WHAT WE DO
+***************************************************/
+.item-what-we-do {
+	background-image: url('../images/about-img-3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-right: 10px;
+	height: 440px;
+}
+
+/* Creating the top line */
+.what-we-do-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 450px;
+}
+
+.what-we-do-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #00cccc; 
+	z-index: -1;
+}
+
+.middle-margin {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+/***************************************************
+	WHY CHOOSE US
+***************************************************/
+.item-why-choose-us {
+	background-image: url('../images/about-img-4.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-right: 10px;
+	height: 440px;
+}
+
+/* Creating the top line */
+.why-choose-us-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 450px;
+}
+
+.why-choose-us-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #00cccc; 
+	z-index: -1;
+}
+
+.why-choose-us-margin {
+	margin-right: -10px;
+}
+
+/***************************************************
+	BILIEN
+***************************************************/
+.bilien-item {
+	background-image: url('../images/banner-bg-about-2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 50px ;
+}
+
+/* Creating the left line */
+.bilien-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.bilien-left-line::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: -10px;
+	background: #cc6600;
+	width: 3px;
+	height: 90%;
+}
+
+/* Title */
+.bilien-bold-large {
+	font-size: 3.5em; /* Adjust this value to get the size you want */
+	font-weight: bold;
+}
+
+.bilien-bold-color {
+	font-weight: bold;
+	color: #cc6600;
+}
+
+/* CSS for two columns */
+.bilien-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.bilien-text {
+	padding-right: 50px;
+	padding-top: 70px;
+	padding-left: 35px;
+}
+
+.bilien-image {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.bilien-image img {
+	max-width: 90%;
+	padding-top: 55px;
+	padding-right: 150px;
+}
+
+/* Creating the top line */
+.bilien-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 15px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 275px;
+}
+
+.bilien-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: rgb(204, 102, 0, 1);
+	z-index: -1;
+}
+
+/***************************************************
+	MENU AND IMAGE
+***************************************************/
+.row-menu-image {
+	display: flex;
+}
+
+.row-menu-image > div:first-child {
+	width: 33%;
+}
+
+.row-menu-image > div:last-child {
+	width: 66%;
+}
+/* MENU */
+.item-menu-about {
+	padding: 20px;
+	margin-bottom: 0px ;
+	margin-right: 10px;
+	height: 150px;
+}
+
+.menu-about-bold-large-color {
+	color: #86b300;
+	font-weight: bold;
+}
+
+.text-paragraph-menu-about {
+	background: white;
+	margin-right: 10px;
+	padding: 25px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.text-paragraph-bottom-menu-about {
+	position: relative;
+	background: white;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.text-paragraph-bottom-menu-about::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 88%; /* adjust this to set your desired border width */
+	background: #86b300;
+}
+
+
+/* Creating the top line */
+.menu-about-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 40px 15px 15px 50px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 546px;
+}
+
+.menu-about-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: #86b300; 
+	z-index: -1;
+}
+
+/* Creating the left line */
+.menu-about-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.menu-about-left-line::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -10px;
+	background: #86b300;
+	width: 3px;
+	height: 120%;
+}
+
+.styled-paragraph {
+	margin: 10px 0; /* Adjust the value as needed */
+	border-bottom: 1px dotted #000;
+	width: 80%;
+	text-align: center; /* If you want the p and border centered */
+	font-size: 20px;
+}
+
+.styled-paragraph:not(:last-child) {
+	padding-bottom: 5px; /* Adjust the value as needed */
+}
+
+.styled-paragraph:last-child {
+	border-bottom: none;
+}
+
+.menu-about-color-text {
+	color: #86b300; 
+}
+
+
+/* IMAGE */
+.item-about-image {
+	background-image: url('../images/about-img-5.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	margin-bottom: 10px ;
+	margin-left: -10px;
+	height: 150px;
+}
+
+.about-image-bold-large-color {
+	color: rgb(255, 204, 0);
+	font-weight: bold;
+}
+
+.text-paragraph-about-image {
+	background: white;
+	margin-left: 10px;
+	padding: 25px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.text-paragraph-bottom-about-image {
+	position: relative;
+	background: white;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	padding: 25px;
+}
+
+.text-paragraph-bottom-about-image::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	width: 88%; /* adjust this to set your desired border width */
+	background: #bfbfbf;
+}
+
+
+
+/* Creating the top line */
+.about-image-top-line {
+	position: relative;
+	z-index: 2;
+	padding: 85px;
+	display: flex;
+	flex-direction: column; /*  together make the .item a flex container and specify its main axis to be vertical (from top to bottom). */
+	justify-content: flex-start; /*  aligns the text to the bottom of the container. */
+	/* It's at the bottom because the text is flex, in a column and at the end of it */
+	height: 432px;
+}
+
+.about-image-top-line::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2%; 
+	background-color: rgb(255, 204, 0);
+	z-index: -1;
+}
+
+/* Creating the left line */
+.about-image-left-line {
+	position: relative;
+	/* Inline-block: if I dont add this, the line stays left. */
+	display: inline-block;
+}
+
+/* This is the vertical line */	
+.about-image-left-line::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -10px;
+	background: rgb(255, 204, 0);
+	width: 3px;
+	height: 120%;
+}
+
+/*************************************************************************************************
+														*********************
+																	GALLERY
+														*********************
+*************************************************************************************************/
+.gallery-title {
+	font-size: 70px;
+	margin-top: 50px;
+	color: white;
+	text-align: center;
+}
+/***************************************************
+	SAVED VIDEO
+***************************************************/
+.text-in-the-video {
+	padding-left: 60px;
+	padding-top: 60px;
+}
+
+.video-container {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	margin-bottom: 70px;
+}
+
+.text-in-the-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	font-size: 4em;  /* Change this to make the text size bigger or smaller */
+	color: pink;
+}
+
+.full-width-video {
+	width: 100%;
+	height: auto;
+
+}
+
+
+/***************************************************
+	YOUTUBE VIDEO
+***************************************************/
+.youtube-container {
+	margin-top: 45px;
+	display: flex;
+}
+
+.youtube-video {
+	width: 100%;
+	height: 800px;
+	border: none;
+}
+
+.google-map {
+	width: 100%;
+	height: 800px;
+}
+
